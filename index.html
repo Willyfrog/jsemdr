@@ -3,10 +3,10 @@
 	<script type="text/javascript" src="./jsemdr.js"></script>
 </head>
 <body>
-<button onclick="start()">Play</button>
-<button onclick="stop()">Stop</button>
+<button id="play" onclick="switch_play()">&#9654;</button>
 
-<input type="range" id="time_value" min="0.5" max="4">Time</input>	
-<input type="range" id="freq_value" min="400" max="600">Freq</input>
+
+<label>Pause Length</label><input type="range" id="pause_value" min="0.5" max="4" value="2" onchange="change_pause()"/>
+<label>Frequency</label><input type="range" id="freq_value" min="400" max="600" value="500" onchange="change_frequency()"/>
 </body>
 </html>
