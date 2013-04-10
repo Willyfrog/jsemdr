@@ -103,7 +103,9 @@ var Beeper = function (play_seconds, wait_seconds, frequency) {
 
   this.change_frequency = function (new_freq) {
     this.frequency = new_freq;
-    this.osc.frequency.value = new_freq;
+    if (this.osc != null) {
+	this.osc.frequency.value = new_freq;
+    }
   };
 
 };
@@ -141,11 +143,11 @@ function switch_play() {
   if (next_play) {
     start();
     //btn.innerHTML = "&#9642;";
-    btn.innerHTML = "&#9724;";
+    btn.innerHTML = "Stop &#9724;";
   }
   else {
     stop();
-    btn.innerHTML = "&#9654;";
+    btn.innerHTML = "Play &#9654;";
   }
   next_play = !next_play;
 }
